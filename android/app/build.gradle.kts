@@ -35,6 +35,10 @@ android {
 
     buildTypes {
         release {
+            // FIX: Disables R8 from deleting TensorFlow classes
+            isMinifyEnabled = false
+            isShrinkResources = false
+
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
